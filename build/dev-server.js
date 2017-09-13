@@ -21,6 +21,26 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+// jsonData
+var apiRoutes = express.Router()
+function getInt() {
+  return Math.floor(Math.random() * (50 - 5 + 1)) + 5
+}
+apiRoutes.get('/listData',function (req, res) {
+  var list = []
+  for (var i = 0;i < 10; i++) {
+    list.push(getInt())
+  }
+  res.send(list)
+})
+apiRoutes.get('/listData01',function (req, res) {
+  var list = []
+  for (var i = 0;i < 10; i++) {
+    list.push(getInt())
+  }
+  res.send(list)
+})
+app.use('/api', apiRoutes)
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {

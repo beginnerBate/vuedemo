@@ -1,14 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <local-linear></local-linear>
+    <random-chart></random-chart>
+    <list></list>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  import LocalLinear from 'components/localLinear'
+  import RandomChart from 'components/randomChart/RandomChart.vue'
+  import list from 'components/list/list.vue'
+  export default {
+    name: 'app',
+    components: {
+      RandomChart,
+      LocalLinear,
+      list
+    }
+  }
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
