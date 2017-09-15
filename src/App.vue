@@ -1,33 +1,32 @@
 <template>
   <div id="app">
-    <local-linear></local-linear>
-    <random-chart></random-chart>
-    <list></list>
-    <router-view></router-view>
+    <vue-header></vue-header>
+    <tab></tab>
+    <transition name="slider">
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </transition>
+
   </div>
 </template>
 
 <script>
-  import LocalLinear from 'components/localLinear'
-  import RandomChart from 'components/randomChart/RandomChart.vue'
-  import list from 'components/list/list.vue'
+  import tab from 'components/tab/tab.vue'
+  import vueHeader from 'components/header/header.vue'
   export default {
     name: 'app',
     components: {
-      RandomChart,
-      LocalLinear,
-      list
+      vueHeader,
+      tab
     }
   }
 </script>
+<style scoped rel="stylesheet/scss" lang="scss">
+  .slider{
 
-<style lang="scss" rel="stylesheet/scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    }
+  .slider{
+
+  }
 </style>

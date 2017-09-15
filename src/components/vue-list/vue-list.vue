@@ -1,12 +1,12 @@
 <template>
-    <div class="list">
-      <ul>
-        <template v-for="item in listData">
-          <li>{{ item }}</li>
-        </template>
-      </ul>
-      <button @click="more()">点击加载更多</button>
-    </div>
+  <div class="list">
+    <ul>
+      <template v-for="item in listData">
+        <li>{{ item }}</li>
+      </template>
+    </ul>
+    <button @click="more()">点击加载更多</button>
+  </div>
 </template>
 
 <script>
